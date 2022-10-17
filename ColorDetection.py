@@ -5,6 +5,7 @@ cap = cv2.VideoCapture(0)
 upper_limit = np. array([116,252,255])
 lower_limit = np. array([99,136,136])
 
+print("Starting")
 while True:
 	ret, frame = cap.read()
 	hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
