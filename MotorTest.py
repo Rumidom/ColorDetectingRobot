@@ -7,7 +7,7 @@ gpio.setwarnings(False)
 
 
 #Configuring GPIO
-pio.setmode(gpio.BCM)
+gpio.setmode(gpio.BCM)
 
 #Left Motor
 gpio.setup(20,gpio.OUT)
