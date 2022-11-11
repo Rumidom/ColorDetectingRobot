@@ -40,10 +40,10 @@ def RightMotorMove(value):
 	if value > 0:
 		RightBackwards.ChangeDutyCycle(0) 
 		RightFoward.ChangeDutyCycle(value)
-	else if value < 0:
+	elif value < 0:
 		RightFoward.ChangeDutyCycle(0) 
 		RightBackwards.ChangeDutyCycle(abs(value))
-	else if value == 0:
+	elif value == 0:
 		RightBackwards.ChangeDutyCycle(0) 
 		RightFoward.ChangeDutyCycle(0) 
 
