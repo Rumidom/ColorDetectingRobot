@@ -21,10 +21,10 @@ def LeftMotorMove(value):
 	if value > 0:
 		LeftBackwards.ChangeDutyCycle(0) 
 		LeftFoward.ChangeDutyCycle(value)
-	else if value < 0:
+	elif value < 0:
 		LeftFoward.ChangeDutyCycle(0) 
 		LeftBackwards.ChangeDutyCycle(abs(value))
-	else if value == 0:
+	elif value == 0:
 		LeftBackwards.ChangeDutyCycle(0) 
 		LeftFoward.ChangeDutyCycle(0) 
 
