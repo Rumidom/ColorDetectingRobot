@@ -40,7 +40,7 @@ while True:
 		cent_x = np.average(mass_x)
 		cent_y = np.average(mass_y)
 		yerror = cent_y - (height/2)
-		NewServoPostion = ServoPostion+yerror
+		NewServoPostion = ServoPostion+int(yerror*0.1)
 		if (NewServoPostion> 800) and (NewServoPostion < 2000):
 			ServoPostion = NewServoPostion
 			Servo.set_servo_pulsewidth( servopin,  ServoPostion)
