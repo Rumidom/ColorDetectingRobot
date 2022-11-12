@@ -14,10 +14,10 @@ gpio.setup(4,gpio.OUT)
 Servo = gpio.PWM(4,50)
 Servo.start(2)
 
-for i in range(3,11,1):
+for i in range(3,10,1):
 	Servo.ChangeDutyCycle(i)
 	time.sleep(0.5)
 
-for i in range(11,3,-1):
+for i in range(10,3,-1):
 	Servo.ChangeDutyCycle(i)
 	time.sleep(0.5)
