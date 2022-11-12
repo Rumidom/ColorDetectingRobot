@@ -17,3 +17,7 @@ Servo.start(0)
 for i in range(17):
 	Servo.ChangeDutyCycle(i)
 	time.sleep(0.5)
+
+for i in range(17):
+	Servo.ChangeDutyCycle(17-i)
+	time.sleep(0.5)
