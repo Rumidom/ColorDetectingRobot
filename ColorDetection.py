@@ -39,7 +39,7 @@ while True:
 	if len(mass_y)> 0:
 		cent_x = np.average(mass_x)
 		cent_y = np.average(mass_y)
-		yerror = (height/2)- cent_y
+		yerror = cent_y - (height/2)
 		NewServoPostion = ServoPostion+yerror
 		if (NewServoPostion> 800) and (NewServoPostion < 2000):
 			ServoPostion = NewServoPostion
