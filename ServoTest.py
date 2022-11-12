@@ -20,11 +20,11 @@ Servo.set_PWM_frequency( servopin, 50 )
 #Servo = gpio.PWM(4,50)
 #Servo.start(2)
 
-for i in range(1000,2000,10):
+for i in range(800,2000,10):
 	Servo.set_servo_pulsewidth( servopin, i )
-	time.sleep(0.25)
+	time.sleep(0.1)
 
 
-for i in range(2000,1000,-10):
+for i in range(2000,800,-10):
 	Servo.set_servo_pulsewidth( servopin, i )
-	time.sleep(0.25)
+	time.sleep(0.1)
