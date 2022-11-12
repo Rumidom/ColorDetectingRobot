@@ -44,7 +44,7 @@ while True:
 		if (NewServoPostion> 800) and (NewServoPostion < 2000):
 			ServoPostion = NewServoPostion
 			Servo.set_servo_pulsewidth( servopin,  ServoPostion)
-		print(yerror)
+		#print(yerror)
 		#frame = cv2.putText(frame, str(int(yerror*0.1)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0), 2, cv2.LINE_AA)
 		#cv2.circle(frame, [int(cent_x), int(cent_y)], 7, (0, 255, 0), -1)
 	
