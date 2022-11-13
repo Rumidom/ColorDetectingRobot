@@ -7,6 +7,8 @@ import time
 # sudo apt-get update && sudo apt-get install python3-pigpio
 # https://ben.akrin.com/raspberry-pi-servo-jitter/
 gpio.setmode(gpio.BCM)
+#Configuring dont show warnings 
+gpio.setwarnings(False)
 
 #Left Motor
 gpio.setup(20,gpio.OUT)
@@ -47,8 +49,6 @@ def RightMotorMove(value):
 		RightFoward.ChangeDutyCycle(0) 
 
 
-#Configuring dont show warnings 
-gpio.setwarnings(False)
 servopin = 4
 Servo = pigpio.pi()
 Servo.set_mode(servopin, pigpio.OUTPUT)
@@ -94,9 +94,9 @@ while True:
 		if RobotRotation < -100:
 			RobotRotation = -100
 
-			LeftMotorMove(-RobotRotation)
-			RightMotorMove(RobotRotation)
-			time.sleep(0.5)
+		LeftMotorMove(-RobotRotation)
+		RightMotorMove(RobotRotation)
+		time.sleep(0.1)
 
 		print(yerror,xerror,len(mass_y))
 		#frame = cv2.putText(frame, str(int(yerror*0.1)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0), 2, cv2.LINE_AA)
