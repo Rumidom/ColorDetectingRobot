@@ -98,11 +98,11 @@ while True:
 		if abs(RobotRotation) > 10:
 			LeftMotorMove(-RobotRotation)
 			RightMotorMove(RobotRotation)
-			time.sleep(0.05)
+			time.sleep(0.02)
 			LeftMotorMove(0)
 			RightMotorMove(0)
 
-		RobotMovement = (AreaError * (1/230))
+		RobotMovement = (AreaError * (1/2300))
 
 		if RobotMovement > 100:
 			RobotMovement = 100
@@ -112,7 +112,7 @@ while True:
 		if abs(RobotMovement) > 10:
 			LeftMotorMove(RobotMovement)
 			RightMotorMove(RobotMovement)
-			time.sleep(0.05)
+			time.sleep(0.02)
 			LeftMotorMove(0)
 			RightMotorMove(0)
 
