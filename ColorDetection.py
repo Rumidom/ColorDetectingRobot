@@ -82,22 +82,39 @@ while True:
 		cent_y = np.average(mass_y)
 		yerror = cent_y - (height/2)
 		xerror = cent_x - (width/2)
+		AreaError = 23000 - len(mass_y)
+
 		NewServoPostion = ServoPostion+int(yerror*0.1)
 		if (NewServoPostion> 800) and (NewServoPostion < 2000):
 			ServoPostion = NewServoPostion
 			Servo.set_servo_pulsewidth( servopin,  ServoPostion)
 		
-		RobotRotation = int(xerror*0.5)
+		RobotRotation = int(xerror*0.7)
 		if RobotRotation > 100:
 			RobotRotation = 100
 		if RobotRotation < -100:
 			RobotRotation = -100
 
-		LeftMotorMove(-RobotRotation)
-		RightMotorMove(RobotRotation)
-		time.sleep(0.05)
-		LeftMotorMove(0)
-		RightMotorMove(0)
+		if RobotRotation > 10:
+			LeftMotorMove(-RobotRotation)
+			RightMotorMove(RobotRotation)
+			time.sleep(0.05)
+			LeftMotorMove(0)
+			RightMotorMove(0)
+
+		RobotMovement = (AreaError * (1/230))
+
+		if RobotMovement > 100:
+			RobotMovement = 100
+		if RobotMovement < -100:
+			RobotMovement = -100
+
+		if RobotMovement > 10:
+			LeftMotorMove(RobotMovement)
+			RightMotorMove(RobotMovement)
+			time.sleep(0.05)
+			LeftMotorMove(0)
+			RightMotorMove(0)
 
 		print(yerror,xerror,len(mass_y))
 		#frame = cv2.putText(frame, str(int(yerror*0.1)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0), 2, cv2.LINE_AA)
