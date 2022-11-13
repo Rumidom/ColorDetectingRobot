@@ -102,7 +102,7 @@ while True:
 			LeftMotorMove(0)
 			RightMotorMove(0)
 
-		RobotMovement = (AreaError * (1/2300))
+		RobotMovement = (AreaError * (1/100))
 
 		if RobotMovement > 100:
 			RobotMovement = 100
