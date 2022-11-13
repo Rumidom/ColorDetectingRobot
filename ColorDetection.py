@@ -95,7 +95,7 @@ while True:
 		if RobotRotation < -100:
 			RobotRotation = -100
 
-		if RobotRotation > 10:
+		if abs(RobotRotation) > 10:
 			LeftMotorMove(-RobotRotation)
 			RightMotorMove(RobotRotation)
 			time.sleep(0.05)
@@ -109,14 +109,14 @@ while True:
 		if RobotMovement < -100:
 			RobotMovement = -100
 
-		if RobotMovement > 10:
+		if abs(RobotMovement) > 10:
 			LeftMotorMove(RobotMovement)
 			RightMotorMove(RobotMovement)
 			time.sleep(0.05)
 			LeftMotorMove(0)
 			RightMotorMove(0)
 
-		print(yerror,xerror,len(mass_y))
+		print(yerror,xerror,AreaError)
 		#frame = cv2.putText(frame, str(int(yerror*0.1)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0), 2, cv2.LINE_AA)
 		#cv2.circle(frame, [int(cent_x), int(cent_y)], 7, (0, 255, 0), -1)
 	
