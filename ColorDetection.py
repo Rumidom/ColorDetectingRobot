@@ -53,8 +53,9 @@ servopin = 4
 Servo = pigpio.pi()
 Servo.set_mode(servopin, pigpio.OUTPUT)
 Servo.set_PWM_frequency( servopin, 50 )
-ServoPostion = 800
+ServoPostion = 1200
 RobotRotation = 0
+Servo.set_servo_pulsewidth( servopin,  ServoPostion)
 cap = cv2.VideoCapture(0)
 Upper_Limit = np. array([117,255,201])
 Lower_Limit = np. array([101,71,47])
@@ -95,7 +96,7 @@ while True:
 		if RobotRotation < -100:
 			RobotRotation = -100
 
-		if abs(RobotRotation) > 10:
+		if abs(RobotRotation) > 10 and abs(yerror) < 20:
 			LeftMotorMove(-RobotRotation)
 			RightMotorMove(RobotRotation)
 			time.sleep(0.02)
@@ -109,7 +110,7 @@ while True:
 		if RobotMovement < -100:
 			RobotMovement = -100
 
-		if abs(RobotMovement) > 10:
+		if abs(RobotMovement) > 10 and abs(yerror) < 20:
 			LeftMotorMove(RobotMovement)
 			RightMotorMove(RobotMovement)
 			time.sleep(0.02)
