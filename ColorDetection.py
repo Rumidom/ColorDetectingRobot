@@ -96,7 +96,7 @@ while True:
 
 		LeftMotorMove(-RobotRotation)
 		RightMotorMove(RobotRotation)
-		time.sleep(0.1)
+		#time.sleep(0.1)
 
 		print(yerror,xerror,len(mass_y))
 		#frame = cv2.putText(frame, str(int(yerror*0.1)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0), 2, cv2.LINE_AA)
