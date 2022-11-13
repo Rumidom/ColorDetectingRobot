@@ -65,8 +65,7 @@ height = frame.shape[0]
 print("Starting")
 
 while True:
-	LeftMotorMove(0)
-	RightMotorMove(0)
+
 	ret, frame = cap.read()
 	hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
@@ -96,7 +95,9 @@ while True:
 
 		LeftMotorMove(-RobotRotation)
 		RightMotorMove(RobotRotation)
-		#time.sleep(0.1)
+		time.sleep(0.05)
+		LeftMotorMove(0)
+		RightMotorMove(0)
 
 		print(yerror,xerror,len(mass_y))
 		#frame = cv2.putText(frame, str(int(yerror*0.1)), (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0), 2, cv2.LINE_AA)
